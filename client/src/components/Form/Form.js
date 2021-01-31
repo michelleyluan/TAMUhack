@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import useStyles from './styles';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+
+import useStyles from './styles';
+import { createPost } from '../../actions/posts'
     
 const Form = () => {
     const [postData, setPostData] = useState({
         eventname: '', time: '', location: '', people: '', info: ''
     });
     const classes = useStyles();
-    const handleSubmit = () =>  {
+    const dispatch = useDispatch();
 
+    const handleSubmit = (e) =>  {
+        e.preventDefault();
+
+        dispatch(createPost(postData));
     }
     const clear = () =>  {
 
@@ -17,8 +24,8 @@ const Form = () => {
 
     return (
         <Paper className={classes.paper}>
-            <form autoComplete="off" noValidate className={classes.form} onSubmit={handleSubmit}>
-            <Typography variant="h6">Add Event</Typography>
+            <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+            <Typography variant="h5" className={classes.formHeader}>Add New Event</Typography>
             <TextField 
                 name="eventname" 
                 variant="outlined" 
@@ -65,12 +72,16 @@ const Form = () => {
                 onChange={(e) => setPostData({ ...postData, info: e.target.value })}
             />  
 
-            <Button className={classes.buttonSubmit} variant="contained" color="primary" size="large" type="submit" fullWidth>
-                Submit
-            </Button>
-            <Button variant="contained" color="secondary" size="small" onClick={clear} type="submit" fullWidth>
-                Clear
-            </Button>
+            <div className={classes.buttonRow}>
+                <Button className={[classes.button, classes.buttonSave].join(' ')} variant="contained" size="large" type="submit" fullWidth disableElevation>
+                    Save
+                </Button>
+                <Button className={[classes.button, classes.buttonClear].join(' ')} variant="contained" color="secondary" size="large" onClick={clear} type="submit" fullWidth disableElevation>
+                    Clear
+                </Button>
+            </div>
+
+
 
             </form>
         </Paper>
