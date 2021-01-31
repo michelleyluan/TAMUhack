@@ -8,8 +8,10 @@ This project will be a class / event organizer, where you can store all your imp
 To run this project:
 Open two terminals: 
 
-In one terminal, use command: cd client
+In one terminal, use command: cd client.
 Then, use the command: npm start
 
-In other terminal, use command: cd server
+In other terminal, use command: cd server.
 Then, use the command: npm start
+
+
