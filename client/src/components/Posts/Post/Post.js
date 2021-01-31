@@ -7,25 +7,29 @@ import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import EditIcon from '@material-ui/icons/EditRounded';
 import IconButton from '@material-ui/core/IconButton';
 
+import { deletePost } from '../../../actions/posts';
+
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
     
-const Post = ({ post }) => {
+const Post = ({ post, setCurrentId }) => {
+    const dispatch = useDispatch();    
     const classes = useStyles();
+
     return (
         <Card className={classes.card}>
 
         <div className={classes.cardHeader}>
             <Typography className={classes.eventName} variant="h5">
-                {post.eventname}
+                {post.eventname ? `${post.eventname}` : 'NA'}
             </Typography>
 
             <CardActions disableSpacing className={classes.cardActions}>
-                <IconButton aria-label="add to favorites">
-                    <EditIcon style={{ color: "white" }}/>
+                <IconButton className={classes.iconButton} aria-label="Edit event" onClick={() => setCurrentId(post._id)}>
+                    <EditIcon style={{ color: "white" }} fontSize="small" />
                 </IconButton>
-                <IconButton aria-label="share">
-                    <DeleteIcon style={{ color: "white" }}/>
+                <IconButton className={classes.iconButton} aria-label="Delete event" onClick={() => dispatch(deletePost(post._id))}>
+                    <DeleteIcon style={{ color: "white" }} fontSize="small" />
                 </IconButton>
             </CardActions>
         </div>
@@ -37,7 +41,7 @@ const Post = ({ post }) => {
                     </Typography>
                     <div className={classes.sectionTextBlock}>
                         <Typography className={classes.sectionText} variant="body2">
-                            {post.time}
+                            {post.time ? `${post.time}` : 'NA'}
                         </Typography>
                     </div>
                 </div>
@@ -49,7 +53,7 @@ const Post = ({ post }) => {
                     </Typography>
                     <div className={classes.sectionTextBlock}>
                         <Typography className={classes.sectionText} variant="body2">
-                            {post.location}
+                            {post.location ? `${post.location}` : 'NA'}
                         </Typography>
                     </div>
                 </div>
@@ -61,7 +65,7 @@ const Post = ({ post }) => {
                     </Typography>
                     <div className={classes.sectionTextBlock}>
                         <Typography className={classes.sectionText} variant="body2">
-                            {post.people}
+                            {post.people ? `${post.people}` : 'NA'}
                         </Typography>
                     </div>
                 </div>
@@ -72,7 +76,7 @@ const Post = ({ post }) => {
                     </Typography>
                     <div className={classes.sectionTextBlock}>
                         <Typography className={classes.sectionText} variant="body2">
-                            {post.info}
+                            {post.info ? `${post.info}` : 'NA'}
                         </Typography>
                     </div>
                 </div>

@@ -5,7 +5,26 @@ export default makeStyles((theme) => ({
     '& .MuiTextField-root': {
       margin: theme.spacing(1),
     },
+    '& label': {
+      fontWeight: '500',
+    },
+    '& label.Mui-focused': {
+      color: '#215363',
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'green',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderWidth: '2px',
+      },
+      '&.Mui-focused fieldset': {
+        borderColor: '#215363',
+      },
+    },
   },
+
+    
   paper: {
     padding: theme.spacing(3),
     borderRadius: 15,
@@ -16,7 +35,8 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
   },
   formHeader: {
-    marginBottom: 15,
+    marginBottom: 10,
+    padding: 10,
   },
   fileInput: {
     width: '97%',
@@ -30,7 +50,7 @@ export default makeStyles((theme) => ({
     backgroundColor: '#B6E9F9',
     color: '#215363',
     '&:hover': {
-      backgroundColor: '#4281A4',
+      backgroundColor: '#215363',
       color: 'white',
     },
   },
