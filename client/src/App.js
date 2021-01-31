@@ -18,9 +18,9 @@ const App = ()  => {
     return (
 
        <Container maxwidth="lg">
-           <AppBar className={classes.appBar} position="static" color="inherit">
-               <Typography className={classes.heading} variant="h2" align="center">My Classes</Typography>
-           </AppBar>
+           <div className={classes.appBar}>
+               <Typography className={classes.heading} variant="h3" align="center">My Class Events</Typography>
+           </div>
            <Grow in>
                <Container>
                    <Grid container justify="space-between" alignItems="stretch" spacing={3}>
