@@ -17,4 +17,27 @@ export default makeStyles(() => ({
     image: {
       marginLeft: '15px',
     },
+    Fab: {
+      justifyContent: 'center',
+      // marginLeft: 100,
+      // backgroundColor: '#29677B',
+      // color: 'white',
+     
+     
+    },
+    FabButton: {
+      // justifyContent: 'center',
+
+      // backgroundColor: '#29677B',
+      // backgroundColor: '#215363',
+      // color: 'white',
+      backgroundColor: '#B6E9F9',
+      color: '#215363',
+      '&:hover': {
+        backgroundColor: '#215363',
+        color: 'white',
+      },
+     
+     
+    }
   }));
