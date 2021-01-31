@@ -1,4 +1,9 @@
 body {
-	background-color: #e4f9ff;
+	min-height: 100vh;
+	background: url("gradient2.jpg") no-repeat center center fixed;
+	background-size: cover;
+	/* background: linear-gradient(to right top, #65dfc9, #6cddeb); */
+	/* background: linear-gradient(to right top, #6cddeb, #50b0f0); */
+	/* background: linear-gradient(to right top, #348fd7, #c2e0eb); */
 	margin: 0;
 }

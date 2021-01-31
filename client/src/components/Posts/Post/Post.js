@@ -17,7 +17,7 @@ const Post = ({ post, setCurrentId }) => {
     const classes = useStyles();
 
     return (
-        <Card className={classes.card}>
+        <Card className={classes.card}  elevation={0}>
 
         <div className={classes.cardHeader}>
             <Typography className={classes.eventName} variant="h5">

@@ -36,7 +36,7 @@ const Form = ({ currentId, setCurrentId }) => {
     };
 
     return (
-        <Paper className={classes.paper}>
+        <Paper className={classes.paper} elevation={0}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
             <Typography variant="h5" className={classes.formHeader}>{currentId ? `Editing "${post.eventname}"` : 'Add New Event'}</Typography>
 

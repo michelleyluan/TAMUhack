@@ -1,27 +1,42 @@
-import React from 'react';
-import { Grid, CircularProgress } from '@material-ui/core';
+// import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import Form from '../Form/Form';
+
+import { getPosts } from '../../actions/posts';
 
 import { useSelector } from 'react-redux';
 
 import Post from './Post/Post';
 import useStyles from './styles';
     
-const Posts = ({ setCurrentId }) => {
+const Posts = () => {
     const posts = useSelector((state) => state.posts);
-    const classes = useStyles();
 
     console.log(posts);
 
+    const [currentId, setCurrentId] = useState(0);
+    const dispatch = useDispatch();
+    const classes = useStyles();
+
+    useEffect(() => {
+        dispatch(getPosts());
+    }, [currentId, dispatch]);
+
+
     return (
-      !posts.length ? <CircularProgress /> : (
-        <Grid className={classes.mainContainer} container alignItems="stretch" spacing={6}>
+      <div className={classes.mainContainer}>
+        <div className={classes.formContainer}>
+            <Form currentId={currentId} setCurrentId={setCurrentId} />
+        </div>
+
           {posts.map((post) => (
-            <Grid key={post._id} item xs={12} sm={6} md={6}>
-              <Post post={post} setCurrentId={setCurrentId} />
-            </Grid>
+            <div className={classes.postContainer}>
+              <Post post={post} setCurrentId={setCurrentId}/>
+            </div>
           ))}
-        </Grid>
-      )
+      </div>
     );
 }
 

@@ -14,6 +14,10 @@ export default makeStyles({
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
+    background: 'linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255,0.6))',
+    boxShadow: '6px 6px 20px rgba(122, 122, 122, 0.2)',
+    // boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
+
   },
   grid: {
     display: 'flex',
