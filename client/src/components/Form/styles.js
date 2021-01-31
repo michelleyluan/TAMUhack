@@ -29,6 +29,10 @@ export default makeStyles((theme) => ({
   buttonSave: {
     backgroundColor: '#B6E9F9',
     color: '#215363',
+    '&:hover': {
+      backgroundColor: '#4281A4',
+      color: 'white',
+    },
   },
   buttonClear: {
     backgroundColor: '#818181',
