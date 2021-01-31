@@ -27,17 +27,22 @@ const Posts = () => {
 
     return (
       <div className={classes.mainContainer}>
-        <div className={classes.formContainer}>
-            <Form currentId={currentId} setCurrentId={setCurrentId} />
-        </div>
 
-          {posts.map((post) => (
-            <div className={classes.postContainer}>
-              <Post post={post} setCurrentId={setCurrentId}/>
-            </div>
-          ))}
+        {posts.map((post) => (
+          <div className={classes.postContainer}>
+            <Post post={post} setCurrentId={setCurrentId}/>
+          </div>
+        ))}
+
+        <div className={classes.formContainer}>
+          <Form currentId={currentId} setCurrentId={setCurrentId} />
+        </div>
       </div>
     );
+
+   
 }
 
 export default Posts;
+
+

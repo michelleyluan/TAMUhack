@@ -33,4 +33,23 @@ export default makeStyles(() => ({
       webkitBackdropFilter: 'blur( 15px )',
       boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
     },
+    Fab: {
+      justifyContent: 'center',
+      // marginLeft: 100,
+      // backgroundColor: '#29677B',
+      // color: 'white',
+    },
+    FabButton: {
+      // justifyContent: 'center',
+
+      // backgroundColor: '#29677B',
+      // backgroundColor: '#215363',
+      // color: 'white',
+      backgroundColor: '#B6E9F9',
+      color: '#215363',
+      '&:hover': {
+        backgroundColor: '#215363',
+        color: 'white',
+      },
+    }
   }));
