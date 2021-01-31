@@ -15,7 +15,11 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 
-const CONNECTION_URL = 'mongodb+srv://bowdointamuhack:RoseMichLaura@cluster0.wsl8u.mongodb.net/<dbname>?retryWrites=true&w=majority';
+app.get('/', (req, res) => {
+    res.send('Hello to Class Event Organizer API');
+});
+
+const CONNECTION_URL = 'mongodb+srv://bowdointamuhack:RoseMichLaura@cluster0.wsl8u.mongodb.net/test?retryWrites=true&w=majority';
 // const CONNECTION_URL = 'mongodb+srv://bowdointamuhack:RoseMichLaura@cluster0.mor9f.mongodb.net/test?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
