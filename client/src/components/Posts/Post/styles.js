@@ -16,7 +16,7 @@ export default makeStyles({
   card: {
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
+    justifyContent: 'flex-start',
     borderRadius: '15px',
     height: '100%',
     position: 'relative',
@@ -49,4 +49,41 @@ export default makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  cardHeader: {
+    backgroundColor: '#29677B',
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
+  eventName: {
+    color: 'white',
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    marginLeft: 35,
+  },
+  cardContent: {
+    padding: 35,
+    paddingTop: 20,
+    paddingBottom: 5,
+  },
+  cardActions: {
+    // backgroundColor: 'green',
+  },
+  cardSection: {
+    // backgroundColor: 'green',
+    marginBottom: 25,
+  },
+  cardSubtitle: {
+    color: '#07222B',
+    fontSize: 21,
+    fontWeight: 'bold',
+  },
+  sectionTextBlock: {
+    // backgroundColor: 'green',
+    padding: 10,
+    margin: 5,
+    marginLeft: 0,
+    borderLeft: '3px solid #215363',
+    // borderRadius: '5px',
+    // boxShadow: '3px 3px 2px 0.3px #c7d1f0',
+  }
 });
