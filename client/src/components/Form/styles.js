@@ -16,7 +16,6 @@ export default makeStyles((theme) => ({
     justifyContent: 'center',
   },
   formHeader: {
-    // backgroundColor: 'red',
     marginBottom: 15,
   },
   fileInput: {
