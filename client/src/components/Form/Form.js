@@ -25,7 +25,11 @@ const Form = () => {
     return (
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
+<<<<<<< HEAD
             <Typography variant="h5" className={classes.formHeader}>Add New Event</Typography>
+=======
+            <Typography variant="h6">Add Event</Typography>
+>>>>>>> d04ea34b5942982a40bcc39ff5640c1322430c36
             <TextField 
                 name="eventname" 
                 variant="outlined" 
